@@ -1,12 +1,9 @@
-#include <cstdlib> // we use the int version of ’abs’
-#include <cstdio>
-#include <cstring>
-
+#include <bits/stdc++.h>
 
 using namespace std;
 
 
-int row[1000], N, count = 0;
+int row[1000], N, cnt = 0;
 
 
 void print ()
@@ -46,8 +43,8 @@ void backtrack(int c)
 {
     if (c == N)
     {
-        count++;
-        printTab();
+        cnt++;
+        //printTab();
         return;
     }
 
