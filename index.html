@@ -67,8 +67,6 @@
 					<li> Criação de scripts para leitura dos modelos pré-treinados no dataset Kinetics </li>
 					<li> Criação de funções de pré-processamento dos vídeos </li>
 					<li> Cálculo do optical flow </li>
-					<li> Criação do ambiente de execução (Docker) </li>
-					<li> Criação de scripts para execução de inferência em vídeosCriação do ambiente de execução (Docker) </li>
 				</ul>
 			</section>
 
@@ -80,25 +78,109 @@
 
 					<ul>
 						<li> Criação do ambiente de execução (Docker) </li>
-						<li> Criação de scripts para execução de inferência em vídeosCriação do ambiente de execução (Docker) </li>
-					</ul>
-
-					<ul>
+						<li> Criação de scripts para execução de inferência em vídeos </li>
 						<li> O código desenvolvido pode ser encontrado no repositório da oficina </li>
-						<li> http://serv113/gitlab/Oficinas/VideoAnalytics2018/tree/i3d/i3d </li>
+						<li> <a>http://serv113/gitlab/Oficinas/VideoAnalytics2018/tree/i3d/i3d</a> </li>
 					</ul>
 				</section>
 
 				<section>
 					<h3> Exemplo de inferência em vídeo </h3>
-					<br>
+					<img src="./assets/Chess.jpeg" />
+				</section>
 
-					<img src="./assets/screenshot.png"/>
+				<section>
+					<h3> Exemplo de inferência em vídeo </h3>
+					<img src="./assets/Bass.jpeg" />
+				</section>
 
+				<section>
+					<h3> Exemplo de inferência em vídeo </h3>
+					<img src="./assets/Tennis.jpeg" />
+				</section>
+
+				<section>
+					<h3> Exemplo de inferência em vídeo </h3>
+					<img src="./assets/Ski.jpeg" />
 				</section>
 			</section>
 
 
+			<section>
+				<h3> Atividades desenvolvidas - treinamento </h3>
+				<br>
+
+				<ul>
+					<li> Criação de scrips para reprodução do data augmentation usado no artigo do I3D </li>
+					<li> Criação de scripts de treinamento (transfer learning) para o dataset HMDB-51 </li>
+					<li> Criação de scripts para treinamento distribuído (várias GPUs em vários servers) </li>
+				</ul>
+			</section>
+
+
+			<section>
+				<h3> Atividades desenvolvidas treinamento </h3>
+				<br>
+
+				<ul>
+					<li> O modelo foi treinado no dataset HMDB-51 a partir dos pesos gerados pelo treinamento no Kinetics </li>
+					<li> Foram utilizadas 4 GPUs (TitanX Pascal), por 3600 iterações com parâmetros idênticos aos descritos no artigo
+						do I3D </li>
+					<li> O treinamento usando 4 GPUs em um modelo distribuído demorou cerca de 1 hora</li>
+					<li> Os resultado foi <b>79%</b> de accuracy no validation set (os autores reportam <b>80.7</b> de accuracy em
+						5000 iterações)</li>
+				</ul>
+			</section>
+
+
+			<section>
+				<h3> Atividades desenvolvidas - sem resultados </h3>
+
+				<ul>
+					<li>
+						<h4>Conversão da rede Mobilenet (V1) para 3D </h4>
+					</li>
+					<ul>
+						<li> Os pesos da rede Mobilenet (treinados no dataset Imagenet) foram inflados e convertidos para um modelo 3D
+						</li>
+						<li> O modelo funciona no caso do <i>boring video</i> - descrito no artigo do I3D </li>
+						<ul>
+							<li>Um vídeo consistindo de <b>N</b> imagens idênticas deve gerar o mesmo resultado <b>N</b> vezes para uma rede
+								inflada a partir de uma rede 2D</li>
+						</ul>
+					</ul>
+			</section>
+
+			<section>
+				<h3> Atividades desenvolvidas sem resultados </h3>
+
+				<ul>
+					<li>
+						<h4>Conversão da rede Mobilenet (V1) para 3D </h4>
+					</li>
+					<ul>
+						<li> Porém, devido aos tipos de camadas e estrutura da rede, não foi possível inicialmente realizar o treinamento
+							por falta de memória (OOM) </li>
+						<li> O problema pode ser devido ao tamanho do batch size usado (6 vídeos de 64 frames), à estrutura do gradiente
+							da rede, ao tamanho da entrada, etc </li>
+					</ul>
+			</section>
+
+			<section>
+				<h3> Atividades desenvolvidas sem resultados </h3>
+
+				<ul>
+					<li>
+						<h4>Conversão dos modelos em 3D para mobile ou WEB </h4>
+					</li>
+					<ul>
+						<li> O Tensorflow possui algumas facilidades para exportar um modelo treinado para aplicativos móveis (TFLite) ou para WEB (TFJS) </li>
+						<li> Porém, nenhuma das ferramentes para a conversão dos modelos possuem no momento suporte para convolução 3D </li>
+						<ul>
+							<li> A priori a implementação seria bastante complexa, o que inviabiliza a exportação nesse momento </li>
+						</ul>
+					</ul>
+			</section>
 		</div>
 	</div>
 
