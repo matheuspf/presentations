@@ -1,128 +1,123 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Plano de Negócio</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>Oficina Video Analytics</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<style>
+		li {
+			font-size: 35px !important;
+		}
+	</style>
+</head>
+
+<body>
 
 
-		<div class="reveal">
-			<div class="slides">
+	<div class="reveal">
+		<div class="slides">
 
+			<section>
+				<h2> Oficina Video Analytics </h2>
+				<br />
+
+				<span style="color: rgb(200, 200, 200)">
+					<h5>I3D - Quo Vadis, Action Recognition? A New Model and the Kinetics Dataset</h5>
+					<p>Matheus Pedroza</p>
+				</span>
+			</section>
+
+			<!-- 
 				<section>
-					<h3> Introdução à Programação Competitiva </h3>
-					<br/>
-
-					<!-- <span style="color: rgb(200, 200, 200)">
-						<p><b>Aluno:</b> Matheus Pedroza Ferreira</p>
-					</span> -->
+					<h3> Sobre o método </h3>
+					<br>
+					
+					<ul>
+						<li>O I3D consiste basicamente em extender a rede de classificação de imagens Inception (V1) para o caso de vídeos</li>
+						<li>Todas as camadas convolucionais em 2D são substituidas por uma versão equivalente em 3D</li>
+						<li>Duas redes são construidas e ponderadas para a classificação - uma com entradas em RGB e outra baseada em optical flow</li>
+					</ul>
 				</section>
+				 -->
 
+			<section>
+				<h3> Atividades desenvolvidas - inferência </h3>
+				<br>
+
+				<ul>
+					<li> Conversão do modelo I3D para Tensorflow </li>
+					<li> Criação de scripts para leitura dos modelos pré-treinados no dataset Kinetics </li>
+					<li> Criação de funções de pré-processamento dos vídeos </li>
+					<li> Cálculo do optical flow </li>
+					<li> Criação do ambiente de execução (Docker) </li>
+					<li> Criação de scripts para execução de inferência em vídeosCriação do ambiente de execução (Docker) </li>
+				</ul>
+			</section>
+
+
+			<section>
 				<section>
-					<span><b> Análise de complexidade </b> </span>
-					<br><br>
+					<h3> Atividades desenvolvidas - inferência </h3>
+					<br>
 
 					<ul>
-						<li> Saber se um algoritmo irá executar no tempo determinado </li>
-						<li> Saber como o tempo do algoritmo escala de acordo com sua entrada </li>
+						<li> Criação do ambiente de execução (Docker) </li>
+						<li> Criação de scripts para execução de inferência em vídeosCriação do ambiente de execução (Docker) </li>
+					</ul>
+
+					<ul>
+						<li> O código desenvolvido pode ser encontrado no repositório da oficina </li>
+						<li> http://serv113/gitlab/Oficinas/VideoAnalytics2018/tree/i3d/i3d </li>
 					</ul>
 				</section>
 
-				
 				<section>
-					<span><b> Análise de complexidade </b> </span>
-					<br><br>
+					<h3> Exemplo de inferência em vídeo </h3>
+					<br>
 
-					<ul>
-						<li> Como base, podemos executar 100 milhões de operações por segundo em um PC convencional </li>
-						<li> Esse número pode variar bastante dependendo do que está sendo executado, então é bom ficar atento </li>
-					</ul>
+					<img src="./assets/screenshot.png"/>
+
 				</section>
+			</section>
 
 
-
-				<section>
-					<span><b> Linguagem de programação </b> </span>
-					<br><br>
-
-					<ul>
-						<li> Sempre use C++, Java ou Python </li>
-						<li> C é totalmente desnecessário em programação competitiva </li>
-						<li> Para problemas pequenos, é possível utilizar um subconjunto de C++ com a mesma performance </li>
-					</ul>
-				</section>
-
-
-				<section>
-					<span><b> Linguagem de programação </b> </span>
-					<br><br>
-
-					<ul>
-						<li> POO </li>
-						<li> Classes e funções já feitas </li>
-						<li> Facilidade de abstração </li>
-					</ul>
-				</section>
-
-
-				<section>
-					<span><b> Backtracking </b> </span>
-					<br><br>
-
-					<ul>
-						<li> Procurar de forma exaustiva todas as possíveis soluções dentro de um espaço </li>
-						<li> Pode ser recursiva ou iterativa (recursive é bem mais comum) </li>
-					</ul>
-				</section>
-
-
-				<section>
-					<span><b> Backtracking </b> </span>
-					<br><br>
-
-					<ul>
-						<li> N-Queens </li>
-					</ul>
-				</section>
-
-				
-
-			</div>
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
 </html>
